@@ -14,3 +14,38 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.altfont {
+  color: white; font-family: 'Raleway',sans-serif; font-size: 16px; font-weight: 700; line-height: 22px; text-transform: uppercase;
+}
+
+.footer{
+  display: block;
+  text-align: center;
+  .button{
+    margin-bottom: 0;
+  }
+
+}
+
+.button {
+  color: white;
+}
+
+.button:hover {
+  background-color: red;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.custombtn{
+display: block;
+  width: 100%;
+}
+
+.fixed-content{
+  background-color: #008B8B;
+}
+
+

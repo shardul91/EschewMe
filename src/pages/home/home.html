@@ -1,17 +1,44 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title text-center="true">EschewMe!</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content >
+  <ion-card>
+    <ion-card-header class="altfont">
+      Location Details
+      <ion-icon name="compass" item-start></ion-icon>
+    </ion-card-header>
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="pin" item-start></ion-icon>
+        <!--Latitude : {{json.latitude}}-->
+        Latitude : {{locationTracker.lat}}
+      </button>
+      <button ion-item>
+        <ion-icon name="pin" item-start></ion-icon>
+        Longitude : {{locationTracker.lng}}
+      </button>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-card-header class="altfont">
+      Unsafe locations
+      <ion-icon name="clipboard" item-start></ion-icon>
+    </ion-card-header>
+    <ion-list>
+      <button ion-item>
+        <ion-list>
+          <ion-item *ngFor="let marker of markers">
+            <ion-icon name="remove" item-start></ion-icon>
+            {{marker.latitude}} , {{marker.longitude}}
+          </ion-item>
+        </ion-list>
+      </button>
+    </ion-list>
+  </ion-card>
 </ion-content>
+<ion-footer style="background-color: #5F9EA0" >
+  <button class="custombtn" ion-button (click)="start()">Mark Location Unsafe</button>
+  <button class="custombtn" ion-button (click)="sendSMS()">SOS</button>
+</ion-footer>
